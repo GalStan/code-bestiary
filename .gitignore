@@ -1,6 +1,7 @@
 # Build outputs
 **/bin
 **/dist
+**/build
 **/publish_output
 **/.env
 **/.env.*.local
