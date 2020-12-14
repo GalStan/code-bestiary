@@ -1,15 +1,18 @@
+export type HTML = string;
+export type UUID = string;
+
 export interface Comment {
-  id: number;
+  id: UUID;
   author: string;
   rating: number;
   content: string;
 }
 
 export interface Article {
-  id: number;
+  id: UUID;
   author: string;
   rating: number;
-  content: string;
+  content: HTML;
   tags: string[];
   comments: Comment[];
 }
