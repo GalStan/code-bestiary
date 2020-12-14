@@ -1,6 +1,7 @@
 import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 import { ArticleCRUD, CRUDStatus } from "./entyties";
-import { Article } from "../../../shared/entyties";
+import { Article, UUID } from "../../../shared/entyties";
 import { parseArticles, stringifyArticle } from "./utils";
 
 const FILE_NAME = "articles.txt";
@@ -19,6 +20,7 @@ export class ArticleStorage implements ArticleCRUD {
   }
 
   create(article: Article): Promise<CRUDStatus> {
+    article.id = uuidv4();
     const stringifiedArticle = stringifyArticle(article);
 
     return fsPromises
@@ -27,7 +29,7 @@ export class ArticleStorage implements ArticleCRUD {
       .catch(() => CRUDStatus.FAIL);
   }
 
-  read(articleId: number): Promise<Article | CRUDStatus.FAIL> {
+  read(articleId: UUID): Promise<Article | CRUDStatus.FAIL> {
     return this.getArticles()
       .then(articles => {
         const article = articles.find(art => art.id === articleId);
@@ -54,7 +56,7 @@ export class ArticleStorage implements ArticleCRUD {
     }
   }
 
-  async delete(articleId: number): Promise<CRUDStatus> {
+  async delete(articleId: UUID): Promise<CRUDStatus> {
     try {
       const articles = await this.getArticles();
       const articlesList = articles.filter(art => art.id !== articleId);
