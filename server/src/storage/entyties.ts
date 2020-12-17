@@ -1,4 +1,4 @@
-import { Article, UUID } from "../../../shared/entyties";
+import { Article, UUID } from "shared/entyties";
 
 export enum CRUDStatus {
   FAIL = "0",

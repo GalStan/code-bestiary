@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
     "outDir": "./build",
@@ -8,9 +8,8 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "esModuleInterop": true,
-    "rootDirs": ["./src", "../shared"],
-    "paths": { "shared/*": ["../shared/*"] }
+    "rootDir": "."
   },
-  "include": ["src/**/*"],
+  "include": ["**/*"],
   "exclude": ["node_modules"]
 }

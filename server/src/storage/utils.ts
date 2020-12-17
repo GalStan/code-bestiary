@@ -1,4 +1,4 @@
-import { Article } from "../../../shared/entyties";
+import { Article } from "shared/entyties";
 
 const DELIMITER = "%END%";
 

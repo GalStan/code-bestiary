@@ -1,7 +1,7 @@
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
 import { ArticleCRUD, CRUDStatus } from "./entyties";
-import { Article, UUID } from "../../../shared/entyties";
+import { Article, UUID } from "shared/entyties";
 import { parseArticles, stringifyArticle } from "./utils";
 
 const FILE_NAME = "articles.txt";
