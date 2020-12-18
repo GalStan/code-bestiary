@@ -4,12 +4,15 @@
     "module": "commonjs",
     "sourceMap": true,
     "outDir": "./build",
+    "types": ["reflect-metadata"],
     "strict": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "esModuleInterop": true,
-    "rootDirs": ["./src", "../shared"],
-    "paths": { "shared/*": ["../shared/*"] }
+    "rootDirs": ["src/.", "../shared"],
+    "paths": { "shared/*": ["../shared/*"] },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
